@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  helmrollout:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-02-08T11:21:07.799877-05:00"
+    description: A Helm chart for Kubernetes
+    digest: fcf055326d5bfd7fd2c34b1e7f41b98998d1bbd37b38c2fc150f84f4fc4a2eba
+    name: helmrollout
+    type: application
+    urls:
+    - https://github.com/VikasLall/helmchart-rollout/helmrollout-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-02-08T11:21:07.799282-05:00"
