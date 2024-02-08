@@ -13,7 +13,7 @@ spec:
       {{- include "helmrollout.selectorLabels" . | nindent 6 }}
   strategy:
     blueGreen:
-      activeService: {{ include "helmrollout.fullname" . }}-active
+      activeService: {{ include "helmrollout.fullname" . }}
       previewService: {{ include "helmrollout.fullname" . }}-preview
       autoPromotionEnabled: false
       scaleDownDelaySeconds: 30   
