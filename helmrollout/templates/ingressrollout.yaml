@@ -17,7 +17,11 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}-preview
   labels:
-    {{- include "helmrollout.labels" . | nindent 4 }}
+    helm.sh/chart: helmrollout-0.1.0
+    app.kubernetes.io/name: helmrollout-preview
+    app.kubernetes.io/instance: helmrollout-preview
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
