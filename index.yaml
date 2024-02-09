@@ -3,7 +3,17 @@ entries:
   helmrollout:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-08T19:57:02.228947-05:00"
+    created: "2024-02-08T20:09:27.275064-05:00"
+    description: A Helm chart for Kubernetes
+    digest: cecb0af283033582a43ae9ec45f10d80f98904d1bbd4bde13096154ca0dacc5d
+    name: helmrollout
+    type: application
+    urls:
+    - helmrollout-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-02-08T20:09:27.27472-05:00"
     description: A Helm chart for Kubernetes
     digest: c6b835f2a8b2c4f911eb431bd3826a1641f52fae7237be47447dbc80366c379e
     name: helmrollout
@@ -11,4 +21,4 @@ entries:
     urls:
     - helmrollout-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-08T19:57:02.22835-05:00"
+generated: "2024-02-08T20:09:27.273857-05:00"
