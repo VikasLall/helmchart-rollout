@@ -42,20 +42,6 @@ spec:
       http:
         paths:
           {{- range .paths }}
-          - path: {{ .path }}
-            {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
-            pathType: {{ .pathType }}
-            {{- end }}
-            backend:
-              {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
-              service:
-                name: {{ $fullName }}
-                port:
-                  number: {{ $svcPort }}
-              {{- else }}
-              serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
-              {{- end }}
           - path: {{ .path }}preview
             {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
             pathType: {{ .pathType }}
@@ -69,7 +55,21 @@ spec:
               {{- else }}
               serviceName: {{ $fullName }}-preview
               servicePort: {{ $svcPort }}
-              {{- end }}              
-          {{- end }}
+              {{- end }}
+          # - path: {{ .path }}preview
+          #   {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
+          #   pathType: {{ .pathType }}
+          #   {{- end }}
+          #   backend:
+          #     {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
+          #     service:
+          #       name: {{ $fullName }}-preview
+          #       port:
+          #         number: {{ $svcPort }}
+          #     {{- else }}
+          #     serviceName: {{ $fullName }}-preview
+          #     servicePort: {{ $svcPort }}
+          #     {{- end }}              
+          # {{- end }}
     {{- end }}
 {{- end }}
