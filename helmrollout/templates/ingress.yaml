@@ -57,7 +57,7 @@ spec:
               servicePort: {{ $svcPort }}
               {{- end }}
           {{- end }}
-    - host: preview.bluegreen.com
+    - host: {{ printf "%s.%s" "preview" .host  | quote }}
       http:
         paths:
           {{- range .paths }}
